@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nightfall Protocol</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="hud" class="panel hidden">
+      <div class="hud-left">
+        <div><span class="label">Health</span><span id="healthValue">100</span></div>
+        <div><span class="label">Ammo</span><span id="ammoValue">12</span></div>
+      </div>
+      <div class="hud-center">
+        <div id="crosshair">+</div>
+      </div>
+      <div class="hud-right">
+        <div><span class="label">Score</span><span id="scoreValue">0</span></div>
+        <div><span class="label">Wave</span><span id="waveValue">1</span></div>
+        <div><span class="label">Monsters</span><span id="monsterValue">0</span></div>
+      </div>
+    </div>
+
+    <div id="mainMenu" class="overlay visible">
+      <div class="menu-card">
+        <img src="./assets/images/menu-bg.png" alt="Nightfall Protocol" class="menu-art" />
+        <h1>Nightfall Protocol</h1>
+        <p>A browser game about surviving monster waves.</p>
+        <button id="playButton" class="primary-btn">Play</button>
+        <button id="muteButton" class="secondary-btn">Mute: Off</button>
+        <div class="tips">
+          <p><strong>Controls:</strong> WASD move, mouse look, click shoot, R reload, Shift sprint, ESC pause.</p>
+          <p>The cursor locks in the center while playing. Survive the monster waves.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="pauseMenu" class="overlay hidden">
+      <div class="menu-card small">
+        <h2>Paused</h2>
+        <p>Press ESC to continue or use the buttons below.</p>
+        <button id="resumeButton" class="primary-btn">Resume</button>
+        <button id="pauseMuteButton" class="secondary-btn">Toggle Mute</button>
+      </div>
+    </div>
+
+    <div id="gameOverMenu" class="overlay hidden">
+      <div class="menu-card small">
+        <h2>Game Over</h2>
+        <p id="gameOverStats">You reached wave 1.</p>
+        <button id="restartButton" class="primary-btn">Restart</button>
+        <button id="backToMenuButton" class="secondary-btn">Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
